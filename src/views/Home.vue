@@ -18,7 +18,7 @@
         <div class="row my-5">
             <div class="col-lg-12 my-5">
                 <h1 class="text-center display-3">
-                    Upcoming events
+                    Upcoming space missions
                 </h1>
             </div>
             <div class="col-lg-4 mb-4" :key="launch.id" v-for="launch in launches">
@@ -75,7 +75,7 @@
         data() {
             return {
                 launches: [],
-                launchesAmount: 6,
+                launchesAmount: 3,
             }
         },
         created() {
