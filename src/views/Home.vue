@@ -6,15 +6,18 @@
                     <h1 class="display-1">
                         Space Launches
                     </h1>
-                    <p>
+                    <p class="mb-1">
                         Everything you want to know about upcoming space missions!
                     </p>
+                    <small>
+                        by Mvtthew
+                    </small>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>
+        <div class="row my-5">
+            <div class="col-lg-12 my-5">
+                <h1 class="text-center display-3">
                     Upcoming events
                 </h1>
             </div>
@@ -26,13 +29,18 @@
                     <h3 class="title">
                         {{launch.name}}
                     </h3>
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between mt-1">
                         <p class="start-date" data-toggle="tooltip" data-placement="bottom" title="Mission start date">
                             <i class="bx bx-calendar"></i> {{launch.windowstart}}
                         </p>
                         <p class="end-date" data-toggle="tooltip" data-placement="bottom" title="Mission end date">
                             <i class="bx bx-calendar-check"></i> {{launch.windowend}}
                         </p>
+                    </div>
+
+                    <div class="location mt-2" v-for="pad in launch.location.pads" :key="pad.id">
+                        <a :href="pad.mapURL" target="_blank"><i class="bx bxs-map"></i> {{pad.name}}</a><br>
+                        <a :href="pad.wikiURL" target="_blank"><i class="bx bxl-wikipedia"></i> More about this launch pad</a>
                     </div>
 
                 </div>
@@ -68,17 +76,6 @@
 </script>
 
 <style lang="scss">
-    @keyframes transfer-slider {
-        0% {
-            background-position: left;
-        }
-        50% {
-            background-position: right;
-        }
-        100% {
-            background-position: left;
-        }
-    }
 
     .home-welcome-page{
         height: calc(100vh - 56px);
@@ -91,9 +88,6 @@
         background: url("https://upload.wikimedia.org/wikipedia/commons/6/69/Cygnus_Wall.jpg");
         background-position: left;
         background-size: cover;
-        animation-name: transfer-slider;
-        animation-duration: 155s;
-        animation-iteration-count: infinite;
 
         .content{
             z-index: 5;
@@ -128,6 +122,9 @@
         .start-date, .end-date{
             margin: 0;
             font-size: 0.8rem;
+        }
+        .location{
+
         }
     }
 </style>

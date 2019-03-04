@@ -15,6 +15,9 @@
                 <li class="nav-item">
                     <router-link class="nav-link" to="/about">About</router-link>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Mvtthew/space-launches" target="_blank">Source code <i class="bx bxl-github" style="color: white !important;"></i></a>
+                </li>
             </ul>
         </div>
     </nav>
