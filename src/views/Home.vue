@@ -21,7 +21,7 @@
                     Upcoming events
                 </h1>
             </div>
-            <div class="col-lg-4" :key="launch.id" v-for="launch in launches">
+            <div class="col-lg-4 mb-4" :key="launch.id" v-for="launch in launches">
                 <div class="card p-2 launch">
                     <div class="img-header" :style="{'background-image': 'url(' + launch.rocket.imageURL + ')'}">
 
@@ -38,10 +38,28 @@
                         </p>
                     </div>
 
-                    <div class="location mt-2" v-for="pad in launch.location.pads" :key="pad.id">
-                        <a :href="pad.mapURL" target="_blank"><i class="bx bxs-map"></i> {{pad.name}}</a><br>
-                        <a :href="pad.wikiURL" target="_blank"><i class="bx bxl-wikipedia"></i> More about this launch pad</a>
+                    <hr class="my-2">
+
+                    <p class="mb-0">
+                        <i class="bx bxs-map-alt"></i> Launch pad/s
+                    </p>
+
+                    <div class="pads mt-2" v-for="(pad, index) in launch.location.pads" :key="pad.id">
+                        <a :href="pad.mapURL" target="_blank" class="h6">#{{index + 1}} - {{pad.name}}</a> by<br>
+                        <ul class="mb-0">
+                            <li v-for="agency in pad.agencies" :key="agency.id">
+                                <a :href="agency.infoURL">{{agency.name}}</a> | {{agency.countryCode}}
+                            </li>
+                        </ul>
+                        <a :href="pad.wikiURL" class="d-block text-right mt-2" target="_blank"><i class="bx bxl-wikipedia"></i> More about this launch pad</a>
                     </div>
+
+                    <hr class="my-2">
+
+                    <p class="mb-0">
+                        <i class="bx bxs-map"></i> {{launch.location.name}} [{{launch.location.countryCode}}]
+                        <a :href="launch.location.infoURL" v-if="launch.location.infoURL !== '' ">About this localization</a>
+                    </p>
 
                 </div>
 
@@ -57,7 +75,7 @@
         data() {
             return {
                 launches: [],
-                launchesAmount: 3,
+                launchesAmount: 6,
             }
         },
         created() {
