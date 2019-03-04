@@ -20,5 +20,9 @@
     .bx{
         color: #45145A !important;
         font-weight: 800;
+        &.bxl-vuejs, &.bxl-github{
+            font-weight: 100;
+            color: black !important;
+        }
     }
 </style>

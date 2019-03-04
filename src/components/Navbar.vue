@@ -28,10 +28,13 @@
 </script>
 
 <style lang="scss" scoped>
-    .navbar-dark{
+    nav{
+        position: sticky !important;
+        top: 0;
+        z-index: 500;
 
-    }
-    .bg-dark{
-        background: linear-gradient(40deg, #45145A, #312A6C);
+        &.bg-dark{
+            background: linear-gradient(40deg, #45145A, #312A6C);
+        }
     }
 </style>
