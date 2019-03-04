@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="author" content="Mateusz Ożóg">
+
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>Space Launches | by Mvtthew</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Boxicons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@1.9.1/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
 <noscript>
@@ -23,5 +30,13 @@
 </noscript>
 <div id="app"></div>
 <!-- built files will be auto injected -->
+<script defer>
+    // BS Tooltips activation
+    setInterval( () => {
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    }, 2000);
+</script>
 </body>
 </html>

@@ -17,5 +17,8 @@
 </script>
 
 <style lang="scss">
-
+    .bx{
+        color: #45145A !important;
+        font-weight: 800;
+    }
 </style>
